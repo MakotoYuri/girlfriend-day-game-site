@@ -194,15 +194,7 @@ body{display:flex;flex-direction:column;justify-content:center;align-items:cente
 
 <canvas id="trail-canvas"></canvas>
 
-<!-- ORIENTATION OVERLAY -->
-<div id="orient-overlay" class="orient hidden">
-  <div class="orient-box">
-    <div style="margin-bottom:14px"><span class="spin">🔄</span> 📱</div>
-    <h2>Rotate Your Screen ✨</h2>
-    <p>For the best cozy exploration experience, turn your phone to landscape mode!</p>
-    <button id="dismiss-orient" class="dismiss-btn">Continue in Portrait 💕</button>
-  </div>
-</div>
+
 
 <div id="app">
   <!-- HUD -->
@@ -597,17 +589,7 @@ document.getElementById('sound-btn').onclick = e => {
 // Auto-show sidebar briefly at start
 setTimeout(()=>{if(state.found.size===0){sb.classList.add('open');setTimeout(()=>sb.classList.remove('open'),3000)}},1000);
 
-/* ── ORIENTATION ──────────────────────────────────────────────────────── */
-let dismissed=false;
-const orientEl=document.getElementById('orient-overlay');
-document.getElementById('dismiss-orient').onclick=()=>{dismissed=true;orientEl.classList.add('hidden')};
-function checkOrient(){
-  if(!orientEl)return;
-  (window.innerWidth<768&&innerHeight>innerWidth&&!dismissed)?orientEl.classList.remove('hidden'):orientEl.classList.add('hidden');
-}
-window.addEventListener('resize',checkOrient);
-window.addEventListener('orientationchange',checkOrient);
-checkOrient();
+
 
 /* ── HINT SYSTEM ──────────────────────────────────────────────────────── */
 document.getElementById('hint-btn').onclick = e => {
