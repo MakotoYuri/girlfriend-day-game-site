@@ -1,0 +1,107 @@
+/* ==========================================================================
+   HAPPY GIRLFRIEND DAY - RESPONSIVE & MOBILE OPTIMIZATIONS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    
+    .hud-header {
+        top: 8px;
+        width: calc(100% - 16px);
+        height: 50px;
+        padding: 0 10px;
+        border-radius: 16px;
+    }
+
+    .hud-brand {
+        font-size: 0.9rem;
+    }
+
+    .hud-title {
+        display: none;
+    }
+
+    .hud-btn {
+        height: 34px;
+        padding: 0 10px;
+        font-size: 0.78rem;
+    }
+
+    .sidebar-panel {
+        width: 85vw;
+        padding: 18px 14px;
+    }
+
+    .checklist-item {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    #game-container {
+        padding: 64px 6px 6px 6px;
+    }
+
+    .room-wrapper {
+        border-radius: 18px;
+        border-width: 2px;
+    }
+
+    .glass-card-popup {
+        max-width: 92vw;
+        padding: 20px 16px;
+        border-radius: 20px;
+    }
+
+    .popup-msg-text {
+        font-size: 1.05rem;
+    }
+
+    .collect-action-btn {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+
+    /* LETTER MODAL RESPONSIVE FIX */
+    .letter-modal {
+        width: 95%;
+        max-height: 80vh;
+        padding: 20px 16px;
+        border-radius: 20px;
+    }
+
+    .typewriter-text {
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .hud-header {
+        top: 4px;
+        height: 40px;
+        padding: 0 8px;
+    }
+
+    #game-container {
+        padding: 48px 4px 4px 4px;
+    }
+
+    .room-wrapper {
+        aspect-ratio: 1000 / 650;
+        max-height: calc(100vh - 54px);
+    }
+
+    .letter-modal {
+        max-height: 85vh;
+        padding: 16px 14px;
+    }
+
+    .typewriter-text {
+        font-size: 1.15rem;
+    }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .hud-header, .sidebar-panel, .glass-card-popup, .ending-overlay {
+        background: rgba(255, 240, 245, 0.96) !important;
+    }
+}
